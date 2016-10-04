@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0-*",
+  "testRunner": "xunit",
+  "dependencies": {
+    "xunit": "2.2.0-beta2-build3300",
+    "WebApplication7": "1.0.0-*",
+    "Microsoft.EntityFrameworkCore.InMemory": "1.0.0",
+    "Microsoft.EntityFrameworkCore": "1.0.0",
+    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
+    "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029"
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.0"
+        }
+      }
+    }
+  }
+}

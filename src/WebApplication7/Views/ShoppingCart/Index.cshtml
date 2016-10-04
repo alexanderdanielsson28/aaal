@@ -1,0 +1,75 @@
+﻿
+        @model  WebApplication7.ViewModels.ShoppingCartViewModel
+        @{
+            ViewBag.Title = "Shopping Cart";
+        }
+         @{decimal totalP = 0; }
+
+        <h3>
+            <em>Review</em> your cart:
+        </h3>
+        <p class="button">
+            @Html.ActionLink("Checkout ", "AddressAndPayment", "Checkout")
+        </p>
+        <div id="update-message">
+        </div>
+        <table>
+            <tr>
+                <th class="c" style="width:100px">
+                     Name
+                </th>
+               
+                <th style="width:100px">
+                     
+                    Price (each)
+                </th>
+            
+                <th style="width:100px">
+                     
+                    ProductId
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.CartItems)
+            {
+                 totalP += item.Product.Price;
+                <tr id="row- @Html.DisplayFor(modelItem => item.Product.ProductId).">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductName).
+                    </td>
+                  
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.Price).
+                    </td>
+                   
+                    <td id="item-count-@item.ProductID">
+                        @Html.DisplayFor(modelItem => item.Product.ProductId).
+                    </td>
+                    <td>
+                        <a href="#" class="RemoveLink"
+                           data-id="@item.ProductID">
+                            Remove
+                            from cart
+                        </a>
+                    </td>
+                </tr>
+            }
+        
+            <tr class="total_table">
+                <td>
+                    Total
+                </td>
+                <td></td>
+                <td></td>
+                <td id="cart-total">
+                     @Html.DisplayFor(modelItem => totalP) kr
+                </td>
+            </tr>
+        </table>
+
+<style>
+    #cart-total{
+        padding-top:10px;
+        color:darkblue;
+    }
+</style>
